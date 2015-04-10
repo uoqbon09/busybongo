@@ -1,0 +1,167 @@
+// OffCanvas
+// - OffCanvas layout fot HTML pages
+// --------------------------------------------------
+
+.st-offcanvas {
+    overflow: hidden;
+	width : 100%;
+    
+    * {
+        .box-sizing(border-box);
+        margin : 0;
+    }
+    
+    .st-offcanvas-main {
+        background : @white;
+        
+        &:before, &:after {
+        	content: " ";
+        	position: absolute;
+        	z-index: -1;
+        	top: 0;
+        	left: -100%;
+        	width: 100%;
+        	height: 100%;	
+        	border-right : 1px solid @white;
+        	border-left : 1px solid @white;            
+        }
+        
+        &:before {
+            box-shadow : @offcanvas-menu-boxshadow;
+            background : @grey;
+        }
+        
+        &:after {
+            box-shadow : @offcanvas-additional-boxshadow;
+            background : @grey;
+            left: 100%;	
+        }
+    }
+    
+    .st-offcanvas-menu, 
+    .st-offcanvas-main, 
+    .st-offcanvas-additional {
+    	width: 100%;
+    	display: block;	
+    	position: relative;
+    }
+        
+    &.active-transitions {
+        .st-offcanvas-menu, 
+        .st-offcanvas-main, 
+        .st-offcanvas-additional {
+            .transition(@offcanvas-transition);
+        }
+    }
+    
+    .st-offcanvas-menu {
+        .js &  {
+        	margin-left: -100%;
+        	float: left;
+        	z-index: 2;	            
+        	
+        	@media all and (min-width: 768px) {
+        		width: 30%;	
+        		margin-left: 0;        	    
+        	}
+        	
+        	@media all and (min-width: 978px) {	
+        		width: 25%;	
+        		margin-left: 0;	
+        		float: left;        	    
+        	}
+        }
+    }
+    
+    .st-offcanvas-main {
+        .js &  {
+        	margin-left: 0;
+        	float: left;
+        	z-index: 1;
+        	position: relative;	  
+        	@media all and (min-width: 768px) {
+        		width: 70%;
+        		float: left;        	    
+        	}
+        	@media all and (min-width: 978px) {	 
+        		width: 50%;	        	    
+        	}
+        }        
+    }
+    
+    .st-offcanvas-additional {
+        .js &  {
+        	margin-right: -200%;
+        	float: left;
+        	z-index: 2;	       
+        	@media all and (min-width: 768px) {
+        		width: 30%;        	    
+        	}
+        	@media all and (min-width: 978px) {	
+        		width: 25%;	
+        		margin-right: 0;
+        		float: right;	        	    
+        	}
+        }
+    }
+    
+    &.active-menu > .st-offcanvas-menu {
+    	margin-left: 0;			
+    	width: 70%;	        
+    }
+    
+    &.active-menu > .st-offcanvas-main {
+        margin-right: -170%;     
+    }    
+    
+    &.active-menu > .st-offcanvas-additional {
+    	margin-left: 100%;
+    }  
+    
+    &.active-additional > .st-offcanvas-menu {
+        margin-left: -100%;   
+        @media all and (min-width: 768px) {
+		    margin-left: -100%;            
+        }
+    }
+    
+    &.active-additional > .st-offcanvas-main {
+    	margin-left: -70%;  
+    	@media all and (min-width: 768px) {
+    		margin-left: 0;
+    		width: 70%;    	    
+    	}
+    }    
+    
+    &.active-additional > .st-offcanvas-additional {
+    	margin-left: 0;
+    	width: 70%;	
+    	@media all and (min-width: 768px) {
+    		margin-right: -70%;
+    		width: 30%;    	    
+    	}
+    }  
+    
+    &.no-menu > .st-offcanvas-menu {
+        @media all and (min-width: 768px) {
+    		margin-right: -70%;
+    		width: 30%;
+        }
+    }
+    
+    &.no-menu > .st-offcanvas-main {
+        .js &  {
+            @media all and (min-width: 978px) {
+                width: 75%;	
+            }
+        }
+    }
+    
+    &.no-additional > .st-offcanvas-main {
+        .js &  {
+            @media all and (min-width: 978px) {	
+                width: 75%;	
+            }            
+        }
+    }
+}

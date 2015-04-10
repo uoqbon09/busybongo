@@ -1,0 +1,124 @@
+// List
+// - Responsive lists
+// --------------------------------------------------
+
+.st-list {
+    margin : 0;
+    padding : 0;
+    
+    &.st-inset {
+        margin : 5%;
+        border-radius : 5px;      
+        
+        li {
+            &:first-child {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;                
+                img {
+                    border-top-left-radius: 10px;
+                }
+            }
+            
+            &:last-child {
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;                
+                img {
+                    border-bottom-left-radius: 10px;
+                }
+            }
+        }
+        
+        &.st-double {
+            li {
+                @media screen and (min-width: 60em) {
+                    width: 46%;
+                    border-radius: 10px;
+                    margin : 2%;
+                    border: none;                    
+                }
+                
+                img {
+                    @media screen and (min-width: 60em) {
+                        border-top-left-radius: 10px;    
+                        border-bottom-left-radius: 10px;    
+                        border-bottom-right-radius: 10px;                   
+                    }
+                }
+            }
+        }
+    }
+    
+    li {
+      display: table;
+      border-collapse: collapse;
+      width: 100%;    
+      background : @list-item-background;
+      .transition(.2s all ease);
+      border-bottom : @list-item-border-bottom;
+      
+      a {
+          display: table-row;
+          overflow: hidden;
+          text-decoration : none;   
+          color : @list-link-color;
+          
+          @media screen and (min-width: 60em) {
+              padding-right: 1em;
+          }
+      }
+      
+      &:last-child {
+          border-bottom : none;
+      }
+      
+      &:hover {
+          background-color : @list-item-hover-color;
+      }
+    }
+    
+    .st-list-img {
+      display: table-cell;
+      vertical-align: middle;
+      width: 30%;
+      padding-right: 1em;   
+      
+      img {
+          display: block;
+          width: 100%;
+          height: auto;          
+      }
+      
+      @media screen and (min-width: 60em) {
+          vertical-align: top;
+      }
+    }
+    
+    .st-list-content {
+      display: table-cell;
+      vertical-align: middle;
+      width: 70%;
+      padding-right: 1em;        
+    }
+    
+    .st-list-title {
+        margin : 0;
+    }
+    
+    .st-list-summary {
+      display: none;
+      margin : 0;     
+      
+      @media screen and (min-width: 40em) {
+          display: block;
+      }
+    }
+    
+    &.st-double {
+        li {
+            @media screen and (min-width: 60em) {
+                float: left;
+                width: 50%;                
+            }
+        }
+    }
+}
