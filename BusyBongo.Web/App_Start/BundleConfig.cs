@@ -6,10 +6,17 @@ namespace BusyBongo.Web.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Scripts/jquery").Include("~/Scripts/jquery-{version}.js"));
-            bundles.Add(new ScriptBundle("~/Scripts/bootstrap").Include("~/Scripts/bootstrap.js"));            
+            bundles.Add(new ScriptBundle("~/Scripts/libs")
+                .Include("~/Scripts/jquery-{version}.js")                
+                .Include("~/Scripts/knockout-{version}.js")
+                .Include("~/Scripts/bootstrap.js")
+                .Include("~/Scripts/Stashy.js")
+                );            
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css")
+                .Include("~/Content/site.css")
+                .Include("~/Content/durandal.css")
+                );
         }
     }
 }

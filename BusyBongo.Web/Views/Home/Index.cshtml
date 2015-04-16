@@ -1,8 +1,46 @@
-﻿<div id="index">
-    <div id="featured" class="jumbotron">
-        <div class="container">
-            <h1>soon...</h1>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>theBusyBongo.com</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="fragment" content="!">
+    <meta name="author" content="Carlson Go">
+    <meta name="keywords" content="The Busy Bongo">
+    @Styles.Render("~/Content/css")
+    <script type="text/javascript">
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "@@-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+</head>
+<body>
+    <div class="st-sticky-wrap" id="applicationHost">
+        <div class="splash well">
+            <div class="message">
+                theBusyBongo.com                
+            </div>
         </div>
     </div>
-</div>
-
+    <footer class="st-sticky-footer">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="footer-content">
+                    <hr />
+                    &copy; @DateTime.UtcNow.Year - Carlson Go
+                </div>
+            </div>
+        </div>
+    </footer>
+    @Scripts.Render("~/Scripts/libs")
+    <script type="text/javascript" src="/Scripts/require.js" data-main="/App/main"></script>
+</body>
+</html>
