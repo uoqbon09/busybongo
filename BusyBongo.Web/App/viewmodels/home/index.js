@@ -1,11 +1,8 @@
-﻿define(['plugins/router','durandal/system'], function (router, sys) {   
+﻿define(function () {
     return {
-        convertRouteToHash: router.convertRouteToHash,
-
+        pageHeading: "Welcome!",
+        pageDescription: "This website is still a work in progress...",
         activate: function () {
-            self = this;
-           
-            sys.log('*** soon...');
-        }    
-    }
-})
+        }
+    };
+});

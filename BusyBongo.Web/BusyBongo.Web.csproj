@@ -107,9 +107,11 @@
   <ItemGroup>
     <Content Include="App\main.js" />
     <Content Include="App\viewmodels\header.js" />
+    <Content Include="App\viewmodels\home\about.js" />
     <Content Include="App\viewmodels\home\index.js" />
     <Content Include="App\viewmodels\shell.js" />
     <Content Include="App\views\header.html" />
+    <Content Include="App\views\home\about.html" />
     <Content Include="App\views\home\index.html" />
     <Content Include="App\views\shell.html" />
     <Content Include="Content\bootstrap\bootstrap.css">
@@ -324,7 +326,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DurandalConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebActivator.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -5,35 +5,35 @@ body {
 }
 
 .splash {
-	text-align: center;
-	margin: 0;
-	opacity : 0.8;
-	color : #FFF;
-	height : 100em;
+    text-align: center;
+    margin: 0;
+    opacity: 0.8;
+    color: rgba(0, 0, 0, 0.5);
+    height: 100em;
 
     .message {
-	    padding-top : 10%;
-	    font-size: 5em;
-	    line-height: 1.5em;
-	    -webkit-text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px;
-	    text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px;
+        padding-top: 10%;
+        font-size: 5em;
+        line-height: 1.5em;
+        -webkit-text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px;
+        text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px;
     }
 
     .fa-spinner {
-	    text-align: center;
-	    display: inline-block;
-	    font-size: 5em;
-	    margin-top: 50px;
+        text-align: center;
+        display: inline-block;
+        font-size: 5em;
+        margin-top: 50px;
     }
 
     @media (max-width: 768px) {
         .message {
-		    font-size : 2.5em;
-	    }
+            font-size: 2.5em;
+        }
 
         .fa-spinner {
-		    font-size : 3.5em;
-	    }
+            font-size: 3.5em;
+        }
     }
 }
 
@@ -42,21 +42,85 @@ body {
     background-color: #ffeeee !important;
 }
 
+.page-host {
+    position: relative;
+    padding-top: 80px;
+}
+
+.loader {
+    margin: 6px 8px 4px 8px;
+    visibility: hidden;
+}
+
+.loader.active {
+    visibility: visible;
+}
+
+
+/* Footer */
+
 footer {
-    max-width : 100%;
+    max-width: 100%;
     display: none;
-    overflow : hidden;
+    overflow: hidden;
 }
 
 .footer-content {
     padding: 3%;
 }
 
-#index #featured {
+#featured {
     margin-top: -30px;
 }
 
-.page-host {
-    position: relative;
-    padding-top: 80px;
+
+/* Bootstrap Overrides */
+
+.navbar-fixed-top {
+
+    .navbar-inner {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    @media (max-width: 979px) {
+        margin-bottom: 0;
+    }
+}
+
+/* Stashy Overrides */
+
+.st-loader {
+    @media (max-width: 768px) {
+        span[class*="l-"] {
+            width: 5px;
+            height: 5px;
+        }
+    }
+}
+
+/* Header */
+
+#sharebar {
+    margin-right: 5px;
+
+    i {
+        font-size: 1.3em;
+    }
+
+    @media (min-width: 768px) {
+        i {
+            -moz-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+            -o-transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+        }
+    }
+
+    @media (max-width: 767px) {
+        span {
+            display: inline !important;
+        }
+    }
 }
