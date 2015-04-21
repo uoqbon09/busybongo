@@ -11,13 +11,13 @@
 define('jquery', function () { return jQuery; });
 define('knockout', ko);
 
-define(['durandal/app', 'durandal/viewLocator', 'durandal/system'],
-	function (app, viewLocator, system) {
+define(['durandal/app', 'durandal/viewLocator'],
+	function (app, viewLocator) {
 	    //>>excludeStart("build", true);
-	    system.debug(true);
+	    //system.debug(false);
 	    //>>excludeEnd("build");
 
-	    app.title = 'The Busy Bongo';
+	    app.title = 'theBusyBongo';
 
 	    app.configurePlugins({
 	        router: true,
