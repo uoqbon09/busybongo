@@ -1,0 +1,12 @@
+﻿{
+  "name": "theBusyBongo",
+  "version": "0.1.0",
+  "main": "app/main.js",
+  "author": "Carlson Go",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-durandal": "~0.1.3",    
+    "grunt-contrib-uglify": "~0.9.1",
+    "mout": "~0.11.0"
+  }
+}

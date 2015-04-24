@@ -114,6 +114,8 @@
     <Content Include="App\views\home\about.html" />
     <Content Include="App\views\home\index.html" />
     <Content Include="App\views\shell.html" />
+    <Content Include="build\app\main-built.js" />
+    <Content Include="build\app\main.js" />
     <Content Include="Content\bootstrap\bootstrap.css">
       <DependentUpon>bootstrap.less</DependentUpon>
     </Content>
@@ -289,7 +291,9 @@
     <Content Include="Content\Stashy\Stashy.Sticky.css.map">
       <DependentUpon>Stashy.Sticky.css</DependentUpon>
     </Content>
+    <Content Include="package.json" />
     <None Include="Properties\PublishProfiles\thebusybongo.pubxml" />
+    <Content Include="gruntfile.js" />
     <Content Include="Scripts\almond-custom.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

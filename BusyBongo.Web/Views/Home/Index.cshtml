@@ -58,6 +58,13 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
     @Scripts.Render("~/Scripts/libs")
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js" data-main="/App/main"></script>
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js" data-main="/App/main"></script>
+    }
+    else
+    {
+        <script type="text/javascript" src="~/build/app/main-built.js"></script>
+    }    
 </body>
 </html>
