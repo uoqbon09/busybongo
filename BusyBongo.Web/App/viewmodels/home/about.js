@@ -1,8 +1,9 @@
 ﻿define(function () {
     return {
         pageHeading: "About",
-        pageDescription : "This website should showcase what I've learned so far about responsive website development.",
+        pageDescription : "",
         activate: function () {
+            ga('send', 'pageview', { 'page': window.location.href, 'title': document.title });
         }
     };
 });
