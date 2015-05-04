@@ -59,8 +59,8 @@ namespace BusyBongo.Web
 
                 Trace.TraceInformation("Decryption: " + mksSection.Decryption);
                 Trace.TraceInformation("DecryptionKey: " + mksSection.DecryptionKey);
-                Trace.TraceInformation("Validation: " + mksSection.Validation);
-                Trace.TraceInformation("ValidationKey: " + mksSection.ValidationAlgorithm);
+                Trace.TraceInformation("Validation: " + mksSection.ValidationAlgorithm);
+                Trace.TraceInformation("ValidationKey: " + mksSection.ValidationKey);
             }
             finally
             {
