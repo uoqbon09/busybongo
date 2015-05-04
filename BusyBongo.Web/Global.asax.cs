@@ -1,8 +1,7 @@
 ﻿using BusyBongo.Web.App_Start;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Configuration;
+using System.Reflection;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -20,6 +19,33 @@ namespace BusyBongo.Web
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            ResetMachinekey();
+        }
+
+        private void ResetMachinekey()
+        {
+            if (Context.IsDebuggingEnabled)
+            {
+                return;
+            }
+
+            var mksType = typeof(MachineKeySection);
+            var mksSection = ConfigurationManager.GetSection("system.web/machineKey") as MachineKeySection;
+            var resetMethod = mksType.GetMethod("Reset", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            var newConfig = new MachineKeySection();
+            newConfig.ApplicationName = mksSection.ApplicationName;
+            newConfig.CompatibilityMode = mksSection.CompatibilityMode;
+            newConfig.DataProtectorType = mksSection.DataProtectorType;
+            newConfig.Validation = mksSection.Validation;
+
+            newConfig.ValidationKey = ConfigurationManager.AppSettings["MKEY_VALIDATIONKEY"];
+            newConfig.DecryptionKey = ConfigurationManager.AppSettings["MKEY_DECRYPTIONKEY"];
+            newConfig.Decryption = ConfigurationManager.AppSettings["MKEY_DECRYPTION"]; // default: AES
+            newConfig.ValidationAlgorithm = ConfigurationManager.AppSettings["MKEY_VALIDATION"]; // default: SHA1
+
+            resetMethod.Invoke(mksSection, new object[] { newConfig });
         }
     }
 }
